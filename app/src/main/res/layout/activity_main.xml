@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/oleo_script"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/title"
+        android:textColor="@color/colorTitle"
+        android:textSize="24sp" />
+
+    <com.robinhood.ticker.TickerView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="12dp"
+        android:textColor="#242424"
+        android:textSize="28sp"
+        app:ticker_animationDuration="600"
+        tool:text="Password will go here" />
+
+    <RelativeLayout
+        android:layout_above="@id/btnGeneratePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/pwdLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@id/tvPwdLength"
+            android:max="16"
+            android:progress="8" />
+
+        <TextView
+            android:id="@+id/tvPwdLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnGeneratePassword"
+        style="@style/GenerateButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onGeneratePasswordClicked"
+        android:text="Generate" />
+
+</RelativeLayout>
